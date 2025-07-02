@@ -31,6 +31,8 @@ public class ScoreTestVer3 {
 			System.out.println("1. 학생 등록");
 			System.out.println("2. 학생 리스트 출력");
 			System.out.println("3. 학생 성적 검색");
+			System.out.println("4. 학생 성적 수정");
+			System.out.println("5. 학생 삭제");
 			System.out.println("9. 프로그램 종료");
 			System.out.println("===============================");
 
@@ -71,7 +73,7 @@ public class ScoreTestVer3 {
 					System.out.println("===============================");
 					System.out.println("학생명\t국어\t영어\t수학\t총점\t평균");
 					System.out.println("===============================");
-					for(int i=0; i<nameList.length; i++) {
+					for(int i=0; i<count; i++) {
 						if(nameList[i] != null) {				
 							System.out.print(nameList[i]+"\t");
 							System.out.print(korList[i]+"\t");
@@ -138,6 +140,98 @@ public class ScoreTestVer3 {
 					}
 				}else {
 					System.out.println("학생 등록을 먼저 진행해 주세요.");
+				}
+			} else if(menu == 4){
+				//1. 수정할 학생명이 존재여부 검색 : 유-> 새로운 성적입력 후 수정
+				//1. 수정할 학생명이 존재여부 검색 : 무-> 검색 데이터 존재 x, 반복진행
+				
+				boolean modiFlag = true;
+				
+				if(count !=0) {
+					while(modiFlag) {
+						System.out.println("수정 할 학생명 검색>");
+						String modifiedName = scan.next();
+						int modiIdx = -1;
+						
+						for(int i=0; i<count; i++) {
+							if(nameList[i].equals(modifiedName)) {
+								modiIdx = i;
+							}
+						}
+						
+						if(modiIdx != -1) {
+							System.out.println(nameList[modiIdx] + "의 국어점수> ");
+							korList[modiIdx] = scan.nextInt();
+							
+							System.out.println(nameList[modiIdx] + "의 영어점수> ");
+							engList[modiIdx] = scan.nextInt();
+							
+							System.out.println(nameList[modiIdx] + "의 수학점수> ");
+							mathList[modiIdx] = scan.nextInt();
+							
+							totList[modiIdx] = korList[modiIdx] + engList[modiIdx] + mathList[modiIdx];
+							avgList[modiIdx] = totList[modiIdx]/3;
+							
+							System.out.println("수정완료");
+							System.out.println("===============================");
+							System.out.println("학생명\t국어\t영어\t수학\t총점\t평균");
+							System.out.println("===============================");
+							System.out.print(nameList[modiIdx]+"\t");
+							System.out.print(korList[modiIdx]+"\t");
+							System.out.print(engList[modiIdx]+"\t");
+							System.out.print(mathList[modiIdx]+"\t");
+							System.out.print(totList[modiIdx]+"\t");
+							System.out.print(avgList[modiIdx]+"\n");
+							
+							System.out.println("계속 진행 하시겠습니까?(계속:아무키 입력, 종료:n)> ");
+							if(scan.next().equals("n")) {
+								//종료
+								break; //또는 modiFlag = false;
+							}
+						}else {
+							System.out.println("해당 학생이 존재하지 않습니다.\n다시 입력해주세요.");
+						}					
+					}
+				} else {
+					System.out.println("등록된 데이터가 없습니다. 등록을 진행해주세요.");
+				}
+				
+			} else if(menu == 5) { //학생 삭제
+				if(count != -1) {
+					boolean deleteFlag = true;
+					while(deleteFlag) {
+						System.out.println("삭제 할 학생명 검색>");
+						String deleteName = scan.next();
+						int deleteIdx = -1;
+						for(int i=0; i<count; i++) {
+							if(nameList[i].equals(deleteName)) {
+								deleteIdx = i;
+							}
+						}
+						
+						if(deleteIdx != -1) {
+							for(int i=deleteIdx; i<count-1; i++) {
+									nameList[i] = nameList[i+1];
+									korList[i] = korList[i+1];
+									engList[i] = engList[i+1];
+									mathList[i] = mathList[i+1];								
+									totList[i] = totList[i+1];
+									avgList[i] = avgList[i+1];
+							}
+							count--;
+							
+							System.out.println("계속 진행 하시겠습니까?(계속:아무키 입력, 종료:n)> ");
+							if(scan.next().equals("n")) {
+								//종료
+								break; //또는 deleteFlag = false;
+							}
+							
+						} else {
+							System.out.println("해당 학생이 존재하지 않습니다.\n다시 입력해주세요.");
+						}
+					}// while-deleteFlag
+				} else {
+					System.out.println("등록된 데이터가 없습니다. 등록을 진행해주세요.");
 				}
 			} else if(menu == 9) { //프로그램 종료
 				System.out.println("프로그램 종료");
