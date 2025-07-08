@@ -42,7 +42,7 @@ public class ScoreMgmSystem {
 		menuCheck(scan.nextInt());
 //		또는
 //		int menu = scan.nextInt(); 	
-//		choiceMenu(menu); //호출할 때 넘기는 값 : 파라미터
+//		menuCheck(menu); //호출할 때 넘기는 값 : 파라미터
 	}
 	
 	/*
@@ -85,9 +85,6 @@ public class ScoreMgmSystem {
 	public void insert() {		
 //		System.out.println("-- insert --");
 		//student = new Student(); //단수 등록		
-		boolean insertFlag = true;
-		
-		while(insertFlag) {
 			sList[count] = new Student(); //복수 등록
 			
 			System.out.println("학생명 > ");
@@ -107,17 +104,15 @@ public class ScoreMgmSystem {
 			count++;
 			if(count==sList.length) {
 				System.out.println("학생 수 가 꽉찼습니다.");
-				insertFlag = false;	
+				showMemu();
 			}
 			
 			System.out.println("추가 등록하시겠습니까?(추가: 아무키, 종료: n)");
 			if(scan.next().equals("n")){
-				insertFlag = false;				
+				showMemu();
+			}else {
+				insert();
 			}
-			
-			
-			
-		}
 	}
 	
 	public void show() {
@@ -134,9 +129,7 @@ public class ScoreMgmSystem {
 		}
 	}
 	
-	public void search() {
-		boolean searchFlag = true;
-		
+	public void search() {		
 		if(count != 0) {
 					int searchIdx = searchIndex(1);					
 					

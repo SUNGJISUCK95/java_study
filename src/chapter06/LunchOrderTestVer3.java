@@ -78,28 +78,7 @@ public class LunchOrderTestVer3 {
 								count++;
 							}else {
 								System.out.println("메뉴 준비중 입니다.");
-							}
-							
-//							switch (menu_num) { //주문 메뉴 선택
-//								case 1 :
-//									orderMenuList[count] = menuList[menu_num-1];
-//									orderPriceList[count] = priceList[menu_num-1];
-//									break;
-//								case 2 :
-//									orderMenuList[count] = menuList[menu_num-1];
-//									orderPriceList[count] = priceList[menu_num-1];
-//									break;
-//								case 3 :
-//									orderMenuList[count] = menuList[menu_num-1];
-//									orderPriceList[count] = priceList[menu_num-1];
-//									break;
-//								case 4 :
-//									orderMenuList[count] = menuList[menu_num-1];
-//									orderPriceList[count] = priceList[menu_num-1];
-//									break;
-//								default :
-//									System.out.println("지정되지 않은 메뉴입니다.");
-//							}							
+							}				
 
 							//주문 갯수 체크
 							if(count == MAX_SIZE) {
