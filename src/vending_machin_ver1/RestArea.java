@@ -8,13 +8,13 @@ public class RestArea {
 	VendingMachine machine;
 	
 	public RestArea() {
-		this("만남의 광장");
+		this("만남의 광장"); //생성자 호출 함수
 	}
 	public RestArea(String name) {
-		this.name = name;
+		this.name = name; //받은 파라미터의 값을 전역변수로 사용 //멤버변수 초기화 작업
 		user = new User("정국");
 		welcome();
-		machine = new VendingMachine("카누");				
+		machine = new VendingMachine("카누",user);				
 	}
 	
 	public void welcome() {

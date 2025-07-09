@@ -18,13 +18,7 @@ public class User {
 	}
 	
 	//Method
-	public boolean coinCheck(int coin) {
-		boolean result = false;
-		if(coin == 100 || coin == 500) {
-			result = true;
-		}
-		return result;
-	}
+	
 	
 	/*
 	 * 동전 입력
@@ -33,6 +27,7 @@ public class User {
 		int resultCoin = 0;
 		System.out.println("["+name+"] 동전입력> ");
 		if(scan.hasNextInt()) {
+			//100원 , 500원만 입력가능
 			int coin = scan.nextInt();
 			resultCoin = coin;
 //			if(coinCheck(coin)) {
