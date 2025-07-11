@@ -29,7 +29,9 @@ public class BankMan {
 	 */
 	//24
 	public void checkPaper(AccountPaperVo accountPaper, Customer customer) {
+//					        (입출금 용지이니 x100)		   (hong이니 주소값 x300)
 		this.customer = customer;
+		this.accountPaper = accountPaper;
 		
 		System.out.println("[은행직원:" + name + "] 출금 용지 정보를 확인하는 중입니다.");
 		if(accountPaper.getName() == null ) {
