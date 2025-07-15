@@ -89,12 +89,14 @@ public class Customer {
 
 	public void setAccountPaper(AccountPaperVo accountPaper) {
 		this.accountPaper = accountPaper; 
+		//가져온 매개변수를 클래스에서 사용하기 위해 필드변수로 지정
 		//▲이게 없으면 주소공유가 안됨 
 		//은행원한테 내용적은 용지를 못줌
 		this.accountPaper.setName(this.name);
 		this.accountPaper.setAccountNumber(this.accountNumber);
 		this.accountPaper.setPassword(this.password);
 		this.accountPaper.setMoney(this.money);
+		//가져온 빈용지에 고객 정보 기입
 		
 		System.out.println(this.name + "출금정보 작성 완료");
 	}

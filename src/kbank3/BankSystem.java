@@ -3,7 +3,7 @@ package kbank3;
 
 public class BankSystem {
 	String name;
-	AccountVo[] accountList;
+	AccountVo[] accountList; //{list[0], list[1], list[2]}
 	
 	public BankSystem(String name) {
 		this.name = name;		
@@ -60,10 +60,11 @@ public class BankSystem {
 		System.out.println("==========================================");
 		System.out.println("\t"+ name + " 고객 리스트");
 		System.out.println("==========================================");
-		for(int i=0;i<accountList.length;i++) {
+		for(int i=0;i<accountList.length;i++) { //accountList.length = 3 
 			AccountVo account = accountList[i];
 			System.out.print(i+1 +".\t");
-			System.out.print(account.getName() +"\t");
+			System.out.print(account.getName() +"\t"); 
+			//AccountVo의 list[i]값 그래서 get도 Vo에서 가져옴
 			System.out.print(account.getAccountNumber() +"\t");
 			System.out.print(account.getPassword() +"\t");
 			System.out.print(account.getBalance() +"\n");
@@ -81,7 +82,7 @@ public class BankSystem {
 		int[] balances = {500, 1000, 700};		
 		AccountVo[] list = new AccountVo[names.length];
 		
-		for(int i=0;i<names.length;i++) {
+		for(int i=0; i<names.length; i++) {
 			AccountVo account = new AccountVo();
 			account.setName(names[i]);
 			account.setAccountNumber(numbers[i]);

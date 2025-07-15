@@ -2,11 +2,20 @@ package kbank3;
 
 public class KBBankTest {
 
+	//순서
+	//1. 은행시스템 실행 및 고객리스트 생성
+	//2. 고객리스트를 출력
+	//3. 입출금 용지를 생성
+	//4. 은행원 이름지정 및 고객리스트 전달
+	//5. 고객 정보 생성
+	//6. 빈 용지에 고객 정보 기입
+	//7. 고객 정보를 적은 용지를 은행원에게 전달
 	public static void main(String[] args) {
 		BankSystem kbsystem = new BankSystem("KB");
 		kbsystem.showAccountList(); // 은행시스템 확인
 		// 싱글톤
-		AccountPaperVo accountPaper = AccountPaperVo.getInstance(); 
+		AccountPaperVo accountPaper = AccountPaperVo.getInstance();
+		// 빈 용지를 변수로 해서 사용하겠다.   // return accountPaper;
 		
 		BankMan staffPark = new BankMan("박보검", kbsystem); //은행직원 생성 시 고객리스트 정보 가짐
 //		은행직원은 고객정보 리스트 출력

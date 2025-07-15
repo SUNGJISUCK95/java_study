@@ -11,6 +11,7 @@ public class AccountPaperVo {
 	//용지를 만드는 방법
 	//변수 지정 생성자 생성 (private 생성자면 변수도 private)
 	private static AccountPaperVo accountPaper = new AccountPaperVo();
+	// 빈 용지를 생성 
 	
 	private AccountPaperVo() {}
 	
@@ -26,6 +27,8 @@ public class AccountPaperVo {
 	//생성한 용지를 get으로 공유
 	public static AccountPaperVo getInstance() {
 		return accountPaper;
+		//빈 용지를 return;
+		//static은 static메소드로 사용
 	}
 	public String getName() {
 		return name;
