@@ -95,6 +95,8 @@ public class ScoreMgmSystem {
 			}
 			default : {
 				System.out.println("메뉴 준비중");
+				showMenu();
+				selectMenu();
 			}
 		}
 	}
