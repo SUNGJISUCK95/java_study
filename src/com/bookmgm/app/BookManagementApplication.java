@@ -24,7 +24,7 @@ public class BookManagementApplication {
 		showMenu();
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) { //실행되는 함수는 많지만 main 메소드에 main Thread는 하나이다.
 		new BookManagementApplication();
 
 	}
