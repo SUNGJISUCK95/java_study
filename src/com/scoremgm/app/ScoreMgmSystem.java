@@ -81,14 +81,14 @@ public class ScoreMgmSystem {
 				service.search();
 				break;
 			}			
-			case UPDATE : {
-				service.update();
-				break;
-			}
-			case DELETE : {
-				service.delete();
-				break;
-			}
+//			case UPDATE : {
+//				service.update();
+//				break;
+//			}
+//			case DELETE : {
+//				service.delete();
+//				break;
+//			}
 			case EIXT : {
 				service.eixt();
 				break;

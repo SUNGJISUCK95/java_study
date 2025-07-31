@@ -6,31 +6,53 @@ package com.scoremgm.model;
 //국어 점수: 90
 //영어 점수: 85
 //수학 점수: 95
-public class Member {
+public class MemberVo {
 	//Field
-	private String no;
+	private int rno;
+	private String mid;
 	private String name;
 	private String department;
 	private int kor;
 	private int eng;
 	private int math;
+	private String mdate;
 	//private면 무조건 get, set 생성
 	
+	
 	//Constructor
-	public Member() {
+	public MemberVo() {
 		
 	}
 	
 	//Method
-	public String getNo() {
-		return no;
+	public String getMdate() {
+		return mdate;
 	}
-	public void setNo(String no) {
-		this.no = no;
+
+	public void setMdate(String mdate) {
+		this.mdate = mdate;
 	}
+	
+	public int getRno() {
+		return rno;
+	}
+
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
+	
+	public String getMid() {
+		return mid;
+	}
+
+	public void setMid(String mid) {
+		this.mid = mid;
+	}
+	
 	public String getName() {
 		return name;
-	}
+	}	
+
 	public void setName(String name) {
 		this.name = name;
 	}

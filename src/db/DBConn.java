@@ -39,7 +39,7 @@ public class DBConn {
 	
 	//--3
 	//Statement 생성
-	public Statement getStatement() {
+	public void getStatement() {
 		try {
 			//2단계 : Statement -- SQL을 실어서 JVM과 DB를 옮겨주는 역할
 			stmt = connection.createStatement();
@@ -47,12 +47,10 @@ public class DBConn {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		return stmt;
 	}
 	
 	//PreparedStatement 생성
-	public Statement getPreparedStatement(String sql) {
+	public void getPreparedStatement(String sql) {
 		try {
 			//2단계 : PreparedStatement -- SQL을 실어서 JVM과 DB를 옮겨주는 역할
 			pstmt = connection.prepareStatement(sql);
@@ -60,8 +58,6 @@ public class DBConn {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		return stmt;
 	}
 	
 	//--4
