@@ -9,6 +9,7 @@ public interface GenericRepositoryInterface<T> { //여러 곳에서 사용하는
 	int getCount();
 	List<T> findAll();
 	T find(String mid);
-//	int update(T entity);
-//	int remove(String no);
+	int update(T entity);
+	int remove(String no);
+	void close();
 }

@@ -7,7 +7,7 @@ public interface GenericInterface<T> {
 	public int insert(T entity);
 	public List<T> listAll();
 	public int update(T entity);
-	public int delete(int memberId);
+	public int delete(int memberId);	
 	public T search(int memberId);
 	public List<T> search(String name);
 }
